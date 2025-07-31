@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimbel Second Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Animasi dan Pusatkan Elemen */
+        .center-text {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .banner-text {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Bimbel">
+            <h1>Bimbel Second Home</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#programs">Program</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="home" class="banner">
+        <img src="banner2.jpg" alt="Banner Bimbel">
+        <div class="banner-text">
+            <h2>Selamat Datang di Bimbel Second Home</h2>
+            <p>Membantu siswa mencapai potensi terbaik mereka.</p>
+            <a href="#programs" class="cta-button">Lihat Program Kami</a>
+        </div>
+    </section>
+
+   <!-- About Us -->
+<section id="about" class="about">
+    <h2>Tentang Kami</h2>
+    <p>
+        <strong>Bimbel Second Home</strong> didirikan sejak 2014 oleh individu yang memiliki passion dalam dunia pendidikan. Kami adalah tempat belajar yang dirancang sebagai rumah kedua bagi siswa dalam meraih prestasi akademik. Kami hadir di Malang dengan komitmen untuk memberikan bimbingan terbaik sesuai dengan kebutuhan setiap siswa.
+    </p>
+    
+    <h3>Program Kami</h3>
+    <ul>
+        <li>✅ <strong>Merdeka</strong> – Pendekatan fleksibel dan kreatif untuk memahami konsep.</li>
+        <li>✅ <strong>Cambridge</strong> – Persiapan matang untuk ujian IGCSE, AS & A Level.</li>
+        <li>✅ <strong>IB (International Baccalaureate)</strong> – Bimbingan intensif untuk siswa yang mengikuti kurikulum IB.</li>
+    </ul>
+    
+    <h3>Visi</h3>
+    <p>Menjadi rumah kedua bagi anak untuk belajar dengan mengutamakan karakter (character), pengetahuan (cognizance), dan kemandirian (independent).</p>
+    
+    <h3>Misi</h3>
+    <ul>
+        <li>Membimbing anak agar memiliki karakter yang rendah hati, kritis, dan dapat dipercaya.</li>
+        <li>Memahami perkembangan setiap anak secara individual.</li>
+        <li>Menanamkan pengetahuan yang utuh tentang diri sendiri, orang lain, dan lingkungan.</li>
+        <li>Membantu anak dengan tidak membatasi waktu belajar.</li>
+        <li>Memiliki SDM pengajar yang aktif, kreatif, dan inovatif.</li>
+    </ul>
+</section>
+
+    <!-- Kontak -->
+    <section id="contact" class="contact">
+        <h2>Hubungi Kami</h2>
+        <p>Untuk informasi lebih lanjut, hubungi kami via WhatsApp:</p>
+        <a href="https://wa.me/628179663661" target="_blank" class="whatsapp-button">
+            <img src="whatsapp.jpg" alt="WhatsApp Icon" width="20"> Hubungi via WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bimbel Second Home. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="https://www.instagram.com/bimbel_secondhome.mlg/?hl=en" target="_blank" class="instagram-button">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/628179663661" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+
+        function reveal() {
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+    });
+</script>
+
+</body>
+</html>

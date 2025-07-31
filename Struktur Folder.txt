@@ -1,0 +1,12 @@
+/bimbel-offline/
+│
+├── index.html          (File utama)
+├── style.css           (File CSS untuk styling)
+├── script.js           (File JavaScript untuk interaktivitas)
+├── images/             (Folder untuk menyimpan gambar)
+│   ├── logo.png        (Logo bimbingan belajar)
+│   ├── banner.jpg      (Gambar banner)
+│   └── gallery/        (Folder untuk gambar galeri)
+├── resources/          (Folder untuk materi belajar)
+│   └── materi.pdf      (Contoh file PDF materi belajar)
+└── offline.html        (Halaman untuk mode offline)

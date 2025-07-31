@@ -1,0 +1,174 @@
+/* Variabel Warna */
+:root {
+    --primary-color: #8BC34A; /* Hijau Muda */
+    --secondary-color: #607D8B; /* Abu-abu */
+    --accent-color: #FFEB3B; /* Kuning Cerah */
+    --text-color: white;
+    --bg-color: #F4F4F4;
+}
+
+/* Reset & Global Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--primary-color), var(--bg-color));
+    color: #333;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+/* Navigasi di Pojok Kanan Atas */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner img {
+    max-width: 80%;
+    height: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.banner-text {
+    margin-top: 20px;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tombol */
+.cta-button {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--accent-color);
+    color: #333;
+}
+
+/* Section */
+section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+}
+
+/* Efek animasi saat scroll */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .banner img {
+        max-width: 100%;
+    }
+}
+
+ul {
+    list-style: none; /* Menghilangkan tanda bullet */
+    padding-left: 0; /* Menghapus padding bawaan */
+}
