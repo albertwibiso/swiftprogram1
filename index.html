@@ -1,662 +1,1110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimble Second Home - Quality Tuition Classes</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bimbel Second Home - Quality Tuition Classes</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
+      .nav-links {
+        margin-left: auto;
+      }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 0.5rem;
+      }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+      .logo img {
+        height: 50px;
+        width: auto;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        transition: all 0.3s ease;
+      }
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
+      .logo-text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
 
-        .hero {
-            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23f0f2f5" width="1000" height="600"/><g fill="%23ddd"><circle cx="200" cy="150" r="50"/><circle cx="800" cy="400" r="80"/><rect x="100" y="300" width="200" height="100" rx="10"/><rect x="700" y="100" width="150" height="120" rx="10"/></g></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 6rem 0;
-        }
+      .logo:hover img {
+        transform: scale(1.05);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+      }
 
+      .logo:hover .logo-text {
+        color: #ff6b6b;
+        text-shadow: 2px 2px 8px rgba(255, 107, 107, 0.4);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .nav-links a:focus {
+        outline: 2px solid #ff6b6b;
+        outline-offset: 2px;
+      }
+
+      .hero {
+        background: linear-gradient(
+            rgba(102, 126, 234, 0.8),
+            rgba(118, 75, 162, 0.8)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23f0f2f5" width="1000" height="600"/><g fill="%23ddd"><circle cx="200" cy="150" r="50"/><circle cx="800" cy="400" r="80"/><rect x="100" y="300" width="200" height="100" rx="10"/><rect x="700" y="100" width="150" height="120" rx="10"/></g></svg>');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 6rem 0;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #ff6b6b;
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        border: 2px solid transparent;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        background: #ff5252;
+      }
+
+      .cta-button:focus {
+        outline: none;
+        border-color: white;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #2c3e50;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .features {
+        background: white;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #667eea;
+      }
+
+      .about {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .about-left,
+      .about-right {
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .about-left h3,
+      .about-right h3 {
+        margin-bottom: 1rem;
+        color: #2c3e50;
+        margin-top: 2rem;
+      }
+
+      .about-left h3:first-child,
+      .about-right h3:first-child {
+        margin-top: 0;
+      }
+
+      .about-left p,
+      .about-right p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        
+        .about-left,
+        .about-right {
+          min-height: auto;
+        }
+      }
+
+      .team {
+        background: white;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .teacher-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2.5rem;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .teacher-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border-color: #667eea;
+      }
+
+      .teacher-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        display: block;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        border: 3px solid #667eea;
+        transition: all 0.3s ease;
+      }
+
+      .teacher-photo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .teacher-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+      }
+
+      .teacher-subject {
+        font-size: 1.1rem;
+        color: #667eea;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .teacher-description {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .philosophy {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .philosophy-content {
+        text-align: center;
+      }
+
+      .mission-statement {
+        font-size: 1.3rem;
+        font-style: italic;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        border-left: 5px solid #ff6b6b;
+      }
+
+      .core-values {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .value-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .value-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .value-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .contact {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .contact-item {
+        padding: 1.5rem;
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff6b6b;
+      }
+
+      footer {
+        background: #1a252f;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .social-media {
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .social-media a {
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .social-media a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #ff6b6b;
+        transform: translateY(-2px);
+        color: #ff6b6b;
+      }
+
+      .social-media a:focus {
+        outline: 2px solid #ff6b6b;
+        outline-offset: 2px;
+      }
+
+      .instagram-button {
+        border-color: #e4405f !important;
+      }
+
+      .instagram-button:hover {
+        background: rgba(228, 64, 95, 0.1) !important;
+        border-color: #e4405f !important;
+        color: #e4405f !important;
+      }
+
+      .location-link {
+        color: #ff6b6b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .location-link:hover {
+        color: #ff5252;
+        border-bottom-color: #ff5252;
+      }
+
+      .location-link:focus {
+        outline: 2px solid #ff6b6b;
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          font-size: 2.5rem;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+          font-size: 1.1rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-        }
-
-        .section {
-            padding: 4rem 0;
+        .nav-links {
+          gap: 1rem;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
+          font-size: 2rem;
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .values-list {
+        text-align: left;
+        margin-left: 0;
+        padding-left: 1.5rem;
+        list-style: none;
+      }
+
+      .values-list li {
+        margin-bottom: 0.8rem;
+        padding-left: 1rem;
+        position: relative;
+        color: #2c3e50;
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      .values-list li::before {
+        content: "✓";
+        position: absolute;
+        left: -1rem;
+        color: #667eea;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 4rem 0;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .section {
+          padding: 2rem 0;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+          padding: 1.5rem;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .values-list {
+          padding-left: 1rem;
         }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .features {
-            background: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-
-        .about {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .team {
-            background: white;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .teacher-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .teacher-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border-color: #667eea;
-        }
-
-        .teacher-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .teacher-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .teacher-subject {
-            font-size: 1.1rem;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .teacher-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .philosophy {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .philosophy-content {
-            text-align: center;
-        }
-
-        .mission-statement {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            border-left: 5px solid #ff6b6b;
-        }
-
-        .core-values {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-item {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .value-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .contact {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
-            padding: 1.5rem;
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ff6b6b;
-        }
-
-        footer {
-            background: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 4rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section {
-                padding: 2rem 0;
-            }
-
-            .service-card {
-                padding: 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="container">
-            <div class="logo">Bimble Second Home</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#philosophy">Our Philosophy</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="container">
+        <div class="logo">
+          <img src="main-logo.png" alt="Bimbel Second Home Logo" />
+          <span class="logo-text">Bimbel Second Home</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#philosophy">Our Philosophy</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section id="home" class="hero">
-        <div class="container">
-            <h1>Bimble Second Home</h1>
-            <p>"Your Child's Second Home for Character, Knowledge & Independence"</p>
-            <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">✨ Nurturing minds since our founding • Building tomorrow's leaders today ✨</p>
-            <a href="#contact" class="cta-button">Enroll Today</a>
-        </div>
+      <div class="container">
+        <h1>Bimbel Second Home</h1>
+        <p>
+          "Your Child's Second Home for Character, Knowledge & Independence"
+        </p>
+        <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9">
+          ✨ Nurturing minds since our founding • Building tomorrow's leaders
+          today ✨
+        </p>
+        <a href="#contact" class="cta-button">Enroll Today</a>
+      </div>
     </section>
 
     <section id="programs" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Learning Programs</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Comprehensive programs designed to develop character, knowledge, and independence</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <h3>Foundation Program</h3>
-                    <p><strong>Character • Knowledge • Skills</strong><br>Core academic subjects with character development. Building strong foundations in English (Nisa), Mathematics (Albert), and Science (Fitri).</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Excellence Program</h3>
-                    <p><strong>Advanced Learning • Critical Thinking</strong><br>Intensive preparation for board exams and competitive tests. Developing analytical skills and academic excellence through personalized guidance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Independence Program</h3>
-                    <p><strong>Self-Learning • Life Skills</strong><br>Teaching students how to learn independently. Study skills, time management, and building confidence for lifelong learning success.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Online Tutoring</h3>
-                    <p>Flexible online classes with interactive whiteboards and recorded sessions. Learn from the comfort of your home.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Homework Support</h3>
-                    <p>Daily homework assistance and doubt clearing sessions. We ensure students complete their assignments with understanding.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Skill Development</h3>
-                    <p>Focus on critical thinking, problem-solving, and study skills that benefit students throughout their academic journey.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Our Learning Programs</h2>
+        <p
+          style="
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+          "
+        >
+          Comprehensive programs designed to develop character, knowledge, and
+          independence
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🌟</div>
+            <h3>Foundation Program</h3>
+            <p>
+              <strong>Character • Knowledge • Skills</strong><br />Core academic
+              subjects with character development. Building strong foundations
+              in English (Nisa), Mathematics (Albert), and Science (Fitri).
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Excellence Program</h3>
+            <p>
+              <strong>Advanced Learning • Critical Thinking</strong
+              ><br />Intensive preparation for board exams and competitive
+              tests. Developing analytical skills and academic excellence
+              through personalized guidance.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🌱</div>
+            <h3>Independence Program</h3>
+            <p>
+              <strong>Self-Learning • Life Skills</strong><br />Teaching
+              students how to learn independently. Study skills, time
+              management, and building confidence for lifelong learning success.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Online Tutoring</h3>
+            <p>
+              Flexible online classes with interactive whiteboards and recorded
+              sessions. Learn from the comfort of your home.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📝</div>
+            <h3>Homework Support</h3>
+            <p>
+              Daily homework assistance and doubt clearing sessions. We ensure
+              students complete their assignments with understanding.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Skill Development</h3>
+            <p>
+              Focus on critical thinking, problem-solving, and study skills that
+              benefit students throughout their academic journey.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="section features">
-        <div class="container">
-            <h2 class="section-title">Why Choose Bimble Second Home?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">⭐</div>
-                    <h3>Experienced Faculty</h3>
-                    <p>Qualified teachers with years of experience in their respective subjects</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📈</div>
-                    <h3>Proven Results</h3>
-                    <p>Consistent track record of student improvement and academic success</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Homely Environment</h3>
-                    <p>Comfortable and nurturing atmosphere that makes learning enjoyable</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⏰</div>
-                    <h3>Flexible Timings</h3>
-                    <p>Students are free to choose their study duration and schedule, anytime within the center’s operating hours.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <h3>Affordable Fees</h3>
-                    <p>Quality education at reasonable rates with flexible payment options</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <h3>Regular Updates</h3>
-                    <p>Weekly progress reports and regular parent-teacher communication</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Why Choose Bimbel Second Home?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>Experienced Faculty</h3>
+            <p>
+              Qualified teachers with years of experience in their respective
+              subjects
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📈</div>
+            <h3>Proven Results</h3>
+            <p>
+              Consistent track record of student improvement and academic
+              success
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🏠</div>
+            <h3>Homely Environment</h3>
+            <p>
+              Comfortable and nurturing atmosphere that makes learning enjoyable
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⏰</div>
+            <h3>Flexible Timings</h3>
+            <p>
+              Students are free to choose their study duration and schedule,
+              anytime within the center’s operating hours.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💰</div>
+            <h3>Affordable Fees</h3>
+            <p>
+              Quality education at reasonable rates with flexible payment
+              options
+            </p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Regular Updates</h3>
+            <p>
+              Weekly progress reports and regular parent-teacher communication
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div>
-                    <h3>Our Mission</h3>
-                    <p>At Bimble Second Home, we believe that every child deserves quality education in a nurturing environment. Our mission is to provide personalized tutoring that not only improves academic performance but also builds confidence and love for learning.</p>
-                    
-                    <h3>Our Approach</h3>
-                    <p>We understand that every student is unique. Our teaching methodology focuses on identifying individual learning styles and adapting our approach accordingly. We create a supportive atmosphere where students feel comfortable asking questions and exploring concepts.</p>
-                </div>
-                <div>
-                    <h3>Our Values</h3>
-                    <ul style="text-align: left; margin-left: 2rem;">
-                        <li>✓ Excellence in education</li>
-                        <li>✓ Individual attention to every student</li>
-                        <li>✓ Building confidence and self-esteem</li>
-                        <li>✓ Fostering critical thinking skills</li>
-                        <li>✓ Creating a positive learning environment</li>
-                        <li>✓ Regular assessment and feedback</li>
-                    </ul>
-                    
-                    <h3>Our Promise</h3>
-                    <p>We promise to provide the best possible education and support to help your child reach their full potential. Our dedicated team is committed to making learning an enjoyable and rewarding experience.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+          <div class="about-left">
+            <h3>Our Mission</h3>
+            <p>
+              At Bimbel Second Home, we believe that every child deserves
+              quality education in a nurturing environment. Our mission is to
+              provide personalized tutoring that not only improves academic
+              performance but also builds confidence and love for learning.
+            </p>
+
+            <h3>Our Values</h3>
+            <ul class="values-list">
+              <li>Excellence in education</li>
+              <li>Individual attention to every student</li>
+              <li>Building confidence and self-esteem</li>
+              <li>Fostering critical thinking skills</li>
+              <li>Creating a positive learning environment</li>
+              <li>Regular assessment and feedback</li>
+            </ul>
+          </div>
+          <div class="about-right">
+            <h3>Our Approach</h3>
+            <p>
+              We understand that every student is unique. Our teaching
+              methodology focuses on identifying individual learning styles and
+              adapting our approach accordingly. We create a supportive
+              atmosphere where students feel comfortable asking questions and
+              exploring concepts.
+            </p>
+
+            <h3>Our Promise</h3>
+            <p>
+              We promise to provide the best possible education and support to
+              help your child reach their full potential. Our dedicated team is
+              committed to making learning an enjoyable and rewarding
+              experience.
+            </p>
+
+            <h3>Why Choose Us</h3>
+            <p>
+              With years of experience in education, we combine traditional
+              teaching methods with modern approaches. Our personalized attention,
+              qualified teachers, and proven track record make us the ideal
+              choice for your child's educational journey.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="philosophy" class="section philosophy">
-        <div class="container">
-            <h2 class="section-title">Our Educational Philosophy</h2>
-            
-            <div class="philosophy-content">
-                <div class="mission-statement fade-in">
-                    <h3 style="margin-bottom: 1rem; color: #ff6b6b;">Our Mission</h3>
-                    <p>"To be your child's second home where learning prioritizes character development, comprehensive knowledge, and fostering independence for lifelong success."</p>
-                </div>
-                
-                <div class="core-values">
-                    <div class="value-item fade-in">
-                        <div class="value-icon">🎭</div>
-                        <h4>Character First</h4>
-                        <p>We guide students to develop humble, critical thinking, and strong moral values alongside academic excellence.</p>
-                    </div>
-                    
-                    <div class="value-item fade-in">
-                        <div class="value-icon">🧠</div>
-                        <h4>Individual Understanding</h4>
-                        <p>Every child is unique. We understand individual development patterns and adapt our teaching accordingly.</p>
-                    </div>
-                    
-                    <div class="value-item fade-in">
-                        <div class="value-icon">🌍</div>
-                        <h4>Comprehensive Knowledge</h4>
-                        <p>Building knowledge about self, relationships with others, and understanding the world around us.</p>
-                    </div>
-                    
-                    <div class="value-item fade-in">
-                        <div class="value-icon">🔄</div>
-                        <h4>Flexible Support</h4>
-                        <p>Adaptive learning approaches that meet each student where they are and help them reach their potential.</p>
-                    </div>
-                    
-                    <div class="value-item fade-in">
-                        <div class="value-icon">💡</div>
-                        <h4>Innovation</h4>
-                        <p>Creative, modern teaching methods that keep students engaged and excited about learning.</p>
-                    </div>
-                    
-                    <div class="value-item fade-in">
-                        <div class="value-icon">🏡</div>
-                        <h4>Home Environment</h4>
-                        <p>Creating a warm, supportive atmosphere where students feel safe to explore, question, and grow.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Our Educational Philosophy</h2>
+
+        <div class="philosophy-content">
+          <div class="mission-statement fade-in">
+            <h3 style="margin-bottom: 1rem; color: #ff6b6b">Our Mission</h3>
+            <p>
+              "To be your child's second home where learning prioritizes
+              character development, comprehensive knowledge, and fostering
+              independence for lifelong success."
+            </p>
+          </div>
+
+          <div class="core-values">
+            <div class="value-item fade-in">
+              <div class="value-icon">🎭</div>
+              <h4>Character First</h4>
+              <p>
+                We guide students to develop humble, critical thinking, and
+                strong moral values alongside academic excellence.
+              </p>
             </div>
+
+            <div class="value-item fade-in">
+              <div class="value-icon">🧠</div>
+              <h4>Individual Understanding</h4>
+              <p>
+                Every child is unique. We understand individual development
+                patterns and adapt our teaching accordingly.
+              </p>
+            </div>
+
+            <div class="value-item fade-in">
+              <div class="value-icon">🌍</div>
+              <h4>Comprehensive Knowledge</h4>
+              <p>
+                Building knowledge about self, relationships with others, and
+                understanding the world around us.
+              </p>
+            </div>
+
+            <div class="value-item fade-in">
+              <div class="value-icon">🔄</div>
+              <h4>Flexible Support</h4>
+              <p>
+                Adaptive learning approaches that meet each student where they
+                are and help them reach their potential.
+              </p>
+            </div>
+
+            <div class="value-item fade-in">
+              <div class="value-icon">💡</div>
+              <h4>Innovation</h4>
+              <p>
+                Creative, modern teaching methods that keep students engaged and
+                excited about learning.
+              </p>
+            </div>
+
+            <div class="value-item fade-in">
+              <div class="value-icon">🏡</div>
+              <h4>Home Environment</h4>
+              <p>
+                Creating a warm, supportive atmosphere where students feel safe
+                to explore, question, and grow.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="team" class="section team">
-        <div class="container">
-            <h2 class="section-title">Meet Our Expert Teachers</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Our dedicated team of experienced educators is committed to helping your child succeed</p>
-            
-            <div class="team-grid">
-                <div class="teacher-card">
-                    <div class="teacher-avatar">N</div>
-                    <h3 class="teacher-name">Pipik</h3>
-                    <p class="teacher-subject">English Teacher</p>
-                    <p class="teacher-description">Passionate about literature and language, Pipik brings creativity and enthusiasm to English learning. She specializes in improving reading comprehension, writing skills, and building confidence in communication.</p>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">A</div>
-                    <h3 class="teacher-name">Albert</h3>
-                    <p class="teacher-subject">Mathematics Teacher</p>
-                    <p class="teacher-description">With a logical approach to problem-solving, Albert makes mathematics be a critical thinker and easier. He excels at breaking down complex concepts and helping students develop strong analytical thinking skills.</p>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">T</div>
-                    <h3 class="teacher-name">Fitri</h3>
-                    <p class="teacher-subject">Science Teacher</p>
-                    <p class="teacher-description">Fitri brings science to life through engaging experiments and real-world applications. She encourages curiosity and scientific thinking while making complex scientific concepts easy to understand.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Meet Our Expert Teachers</h2>
+        <p
+          style="
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+          "
+        >
+          Our dedicated team of experienced educators is committed to helping
+          your child succeed
+        </p>
+
+        <div class="team-grid">
+          <div class="teacher-card">
+            <img
+              src="teachers/english - Pipik.JPG"
+              alt="Pipik"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Pipik</h3>
+            <p class="teacher-subject">English Teacher</p>
+            <p class="teacher-description">
+              Passionate about literature and language, Pipik brings creativity
+              and enthusiasm to English learning. She specializes in improving
+              reading comprehension, writing skills, and building confidence in
+              communication.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/english - nisa.JPG"
+              alt="Nisa"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Nisa</h3>
+            <p class="teacher-subject">English Teacher</p>
+            <p class="teacher-description">
+              Dedicated to helping students master English communication skills.
+              Nisa focuses on grammar, vocabulary building, and speaking
+              confidence to prepare students for academic and real-world
+              success.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/english - zulfa.JPG"
+              alt="Zulfa"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Zulfa</h3>
+            <p class="teacher-subject">English Teacher</p>
+            <p class="teacher-description">
+              Expert in English language instruction with a focus on interactive
+              learning methods. Zulfa helps students develop strong writing and
+              speaking skills through engaging activities and personalized
+              guidance.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/Albertus - Mathematics.JPG"
+              alt="Albertus"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Albertus</h3>
+            <p class="teacher-subject">Mathematics Teacher</p>
+            <p class="teacher-description">
+              With a logical approach to problem-solving, Albertus makes
+              mathematics accessible and enjoyable. He excels at breaking down
+              complex concepts and helping students develop strong analytical
+              skills.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/Amel - Mathematics.JPG"
+              alt="Amel"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Amel</h3>
+            <p class="teacher-subject">Mathematics Teacher</p>
+            <p class="teacher-description">
+              Specializes in making mathematics fun and understandable for
+              students of all levels. Amel uses creative teaching methods to
+              help students overcome math anxiety and build confidence in
+              problem-solving.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/Risaldi - Mathematics.JPG"
+              alt="Risaldi"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Risaldi</h3>
+            <p class="teacher-subject">Mathematics Teacher</p>
+            <p class="teacher-description">
+              Passionate about mathematical concepts and their real-world
+              applications. Risaldi helps students develop critical thinking
+              skills and mathematical reasoning through structured and engaging
+              lessons.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/science - fitri.JPG"
+              alt="Fitri"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Fitri</h3>
+            <p class="teacher-subject">Science Teacher</p>
+            <p class="teacher-description">
+              Fitri brings science to life through engaging experiments and
+              real-world applications. She encourages curiosity and scientific
+              thinking while making complex scientific concepts easy to
+              understand.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/science - dian.JPG"
+              alt="Dian"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Dian</h3>
+            <p class="teacher-subject">Science Teacher</p>
+            <p class="teacher-description">
+              Expert in making science accessible and exciting for students.
+              Dian uses hands-on activities and demonstrations to help students
+              understand scientific principles and develop analytical thinking.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/science - reno.JPG"
+              alt="Reno"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Reno</h3>
+            <p class="teacher-subject">Science Teacher</p>
+            <p class="teacher-description">
+              Passionate about environmental science and biology. Reno helps
+              students connect scientific concepts to everyday life and develops
+              their curiosity about the natural world around them.
+            </p>
+          </div>
+
+          <div class="teacher-card">
+            <img
+              src="teachers/science - silfa.JPG"
+              alt="Silfa"
+              class="teacher-photo"
+            />
+            <h3 class="teacher-name">Silfa</h3>
+            <p class="teacher-subject">Science Teacher</p>
+            <p class="teacher-description">
+              Dedicated to fostering scientific inquiry and critical thinking.
+              Silfa specializes in chemistry and physics, making complex topics
+              understandable through clear explanations and practical examples.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>Ready to give your child the best educational support? Contact us today!</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <h3>WhatsApp Us</h3>
-                    <p><strong>+628179663661</strong></p>
-                    <p>Quick responses • Available Mon-Sat, 9 AM - 7 PM</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <h3>Visit Us</h3>
-                    <p>Schedule a visit to see our facilities</p>
-                    <p>and meet our experienced faculty</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💬</div>
-                    <h3>Free Consultation</h3>
-                    <p>Book a free consultation to discuss</p>
-                    <p>your child's educational needs</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <a href="https://wa.me/628179663661" class="cta-button" target="_blank">WhatsApp Us</a>
-                <a href="tel:+628179663661" class="cta-button" style="margin-left: 1rem;">Call Now</a>
-            </div>
-        </div>
-    </section>
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>
+          Ready to give your child the best educational support? Contact us
+          today!
+        </p>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Bimble Second Home. All rights reserved. | Empowering students, one lesson at a time.</p>
-        </div>
-        <p>&copy; 2025 Bimbel Second Home. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="https://www.instagram.com/bimbel_secondhome.mlg/?hl=en" target="_blank" class="instagram-button">
-                <i class="fab fa-instagram"></i> Instagram
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+
+            <a
+              href="https://wa.me/628179663661"
+              target="_blank"
+              class="location-link"
+            >
+              <h3>WhatsApp Us</h3>
             </a>
-            <a href="https://wa.me/628179663661" target="_blank">WhatsApp</a>
+            <p><strong>+628179663661</strong></p>
+            <p>• Available Mon-Sat, 9 AM - 7 PM</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <h3>
+              <a
+                href="https://www.google.com/maps/place/Bimbel+Second+Home+Malang/@-7.9389865,112.6516535,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd62997e9af9515:0xdbac34607ab5de62!8m2!3d-7.9389865!4d112.6542284!16s%2Fg%2F11cp7fgf9q?entry=ttu&g_ep=EgoyMDI1MDgwNC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                class="location-link"
+              >
+                <h3>Visit Us</h3>
+              </a>
+            </h3>
+            <p>Schedule a visit to see our facilities</p>
+            <p>and meet our experienced faculty</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <a href="tel:+628179663661" target="_blank" class="location-link"
+              ><h3>Free Consultation</h3></a
+            >
+            <p>Book a free consultation to discuss</p>
+            <p>your child's educational needs</p>
+          </div>
         </div>
-    </footer>
-    
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
 
-        // Scroll reveal animation
-        function revealOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
+        <div style="margin-top: 3rem"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024 Bimbel Second Home. All rights reserved. | Empowering
+          students, one lesson at a time.
+        </p>
+        <p>&copy; 2025 Bimbel Second Home. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
+        });
+      });
+
+      // Scroll reveal animation
+      function revealOnScroll() {
+        const elements = document.querySelectorAll(".fade-in");
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(102, 126, 234, 0.95)";
+        } else {
+          header.style.background =
+            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
         }
 
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
-            
-            revealOnScroll();
-        });
+        revealOnScroll();
+      });
 
-        // Initial check for elements in view
-        document.addEventListener('DOMContentLoaded', function() {
-            revealOnScroll();
-        });
+      // Initial check for elements in view
+      document.addEventListener("DOMContentLoaded", function () {
+        revealOnScroll();
+      });
     </script>
-</body>
+  </body>
 </html>
